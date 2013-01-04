@@ -86,6 +86,7 @@ body {
 						width: 32px;
 						height:32px; 
 						background: url(/images/buttons.png) 0 -128px;
+						background-image: -webkit-image-set(url(/images/buttons.png) 1x, url(/images/buttons@2x.png) 2x);
 						@media screen and (min-width: 769px) {
 							margin-left: -48px;
 							margin-top: 2px;
