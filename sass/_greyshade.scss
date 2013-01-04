@@ -74,11 +74,34 @@ body {
 		background: white;
 		//box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
 		.mid-col-container {
-			padding: 0px 70px 0px 40px;
+			padding: 0px 80px 0px 70px;
 			#content {
 				width: 100%;
 				article {
 					border-top: none;
+					.post-back {
+						float: left;
+						
+						
+						width: 32px;
+						height:32px; 
+						background: url(/images/buttons.png) 0 -128px;
+						@media screen and (min-width: 769px) {
+							margin-left: -48px;
+							margin-top: 2px;
+						}
+						@media screen and (max-width: 768px) {
+							margin-left:0;
+							margin-top: -53px;
+							&::after {
+								content: "返回主页";
+								display: block;
+								margin: -0.8em 38px;
+								font-size: 1.6em;
+								width: 6em;
+							}
+						}
+					}
 					.title {
 						margin-left: 0px;
 
