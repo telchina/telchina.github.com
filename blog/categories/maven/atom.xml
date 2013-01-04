@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: maven | My Octopress Blog]]></title>
+  <link href="http://telchina.github.com/blog/categories/maven/atom.xml" rel="self"/>
+  <link href="http://telchina.github.com/"/>
+  <updated>2013-01-04T16:13:40+08:00</updated>
+  <id>http://telchina.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Eclipse提交任意项目至IBM RTC的方法]]></title>
+    <link href="http://telchina.github.com/blog/2012/12/29/eclipseti-jiao-ren-yi-xiang-mu-zhi-ibm-rtcde-fang-fa/"/>
+    <updated>2012-12-29T11:42:00+08:00</updated>
+    <id>http://telchina.github.com/blog/2012/12/29/eclipseti-jiao-ren-yi-xiang-mu-zhi-ibm-rtcde-fang-fa</id>
+    <content type="html"><![CDATA[<p>在开博第一篇<a href="http://telchina.github.com/blog/2012/12/28/ibm-rtcke-hu-duan-java-eekai-fa-cha-jian-an-zhuang-zhi-dao/">《IBM RTC客户端Java EE开发插件安装指导》</a>中，我们介绍了将RTC客户端安装上Java EE开发插件，并将</p>
+
+<p>本文将介绍如何将任意Eclipse项目提交至IBM RTC客户端的方法。</p>
+
+<!--more-->
+
+
+<p>关于怎么提交的事儿作者正在奋笔疾书，不要催，很快来……</p>
+]]></content>
+  </entry>
+  
+</feed>
