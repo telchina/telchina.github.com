@@ -4,7 +4,7 @@
   <title><![CDATA[Category: maven | telChina Platform]]></title>
   <link href="http://telchina.github.com/blog/categories/maven/atom.xml" rel="self"/>
   <link href="http://telchina.github.com/"/>
-  <updated>2013-01-14T23:07:45+08:00</updated>
+  <updated>2013-01-23T15:49:30+08:00</updated>
   <id>http://telchina.github.com/</id>
   <author>
     <name><![CDATA[telChina]]></name>
@@ -35,7 +35,9 @@
 </ol>
 
 
-<p>其中第二步的时候大家选择了……于是……。实际上大家可以在第二步中选择……。这样组件不会以单个Eclipse工程的形式创建出来。那么如何提交代码呢？</p>
+<p>其中第二步的时候大家选择了创建后加载存储库工作间，且在后面的向导中选择了将组件根目录加载为项目。于是让大家误认为一个组件只能对应一个Eclipse工程。</p>
+
+<p>实际上在创建存储库工作间后加载的时候我们可以选择查找并载入Eclipse工程。这样如果组件下存在Eclipse工程会被加载，如果组件下没有的话不会有任何Eclipse工程被加载。那么如何提交代码呢？</p>
 
 <h2>将本地已经创建好的项目迁入RTC</h2>
 
