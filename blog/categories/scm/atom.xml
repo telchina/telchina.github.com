@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: scm | telChina Platform]]></title>
+  <link href="http://telchina.github.com/blog/categories/scm/atom.xml" rel="self"/>
+  <link href="http://telchina.github.com/"/>
+  <updated>2013-01-23T16:27:40+08:00</updated>
+  <id>http://telchina.github.com/</id>
+  <author>
+    <name><![CDATA[telChina]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Eclipse提交任意项目至IBM RTC的方法]]></title>
+    <link href="http://telchina.github.com/blog/2012/12/29/eclipseti-jiao-ren-yi-xiang-mu-zhi-ibm-rtcde-fang-fa/"/>
+    <updated>2012-12-29T11:42:00+08:00</updated>
+    <id>http://telchina.github.com/blog/2012/12/29/eclipseti-jiao-ren-yi-xiang-mu-zhi-ibm-rtcde-fang-fa</id>
+    <content type="html"><![CDATA[<p>在开博第一篇<a href="http://telchina.github.com/blog/2012/12/28/ibm-rtcke-hu-duan-java-eekai-fa-cha-jian-an-zhuang-zhi-dao/">《IBM RTC客户端Java EE开发插件安装指导》</a>中，我们介绍了将RTC客户端安装上Java EE开发插件，并将RTC创建的普通项目修改为Java EE Web工程的方法。但是这还远不能满足我们在实际开发过程中的需求。因为不论是根据公司的相关规划还是但对于软件模块化开发的需求，一个组件内都都不止包含一个Eclipse工程。</p>
+
+<p>本文将介绍一种新方法，将任意Eclipse工程提交至RTC。</p>
+
+<!--more-->
+
+
+<h2>澄清</h2>
+
+<p>在之前的培训过程中有的同学认为流中的每个组件在将流创建出本地存储库之后都会对应一个Eclipse工程。这是一个误区。如果仔细查看创建本地存储库的步骤的话，会发现这是两个过程：</p>
+
+<ol>
+<li>为流创建本地存储库。</li>
+<li>将流中的组件迁出并识别为Eclipse工程。</li>
+</ol>
+
+
+<p>其中第二步的时候大家选择了创建后加载存储库工作间，且在后面的向导中选择了将组件根目录加载为项目。于是让大家误认为一个组件只能对应一个Eclipse工程。</p>
+
+<p>实际上在创建存储库工作间后加载的时候我们可以选择查找并载入Eclipse工程。这样如果组件下存在Eclipse工程会被加载，如果组件下没有的话不会有任何Eclipse工程被加载。那么如何提交代码呢？</p>
+
+<h2>将本地已经创建好的项目迁入RTC</h2>
+
+<p>你可以将本地创建的任何类型的Eclipse工程迁入到RTC中。Eclipse工程的类型可以是：Java工程，Java EE Web工程，Flex、Flash工程，Maven工程，Android工程等等都可以。</p>
+
+<blockquote><p><strong>注意！</strong>
+这里需要我们的Eclipse开发工具已经集成了RTC功能。你可以选择<a href="">在RTC客户端上安装所需插件</a>升级为你需要的Eclipse，也可以<a href="">将RTC客户端集成安装到你已有的Eclipse中</a>（例如Flash Builder、MyEclipse用户）</p></blockquote>
+
+<p>将已经创建好的项目提交到RTC上某个流的组件可以按照下面的步骤进行：</p>
+
+<ol>
+<li>首先需要先对流创建本地存储库。这个在前面提到过，这里不多复述。</li>
+<li>选择需要迁入RTC的项目右键单击依次选择：团队(Team)⟶共享项目(Share Project)…。打开项目共享项目向导。</li>
+<li>选择存储库类型为Jazz Source Control之后，在向导的第二步中选择之前迁到本地的存储库中的组件。</li>
+<li>在向导的最后一步中提供了选择性提交的支持，可以在此设置过滤条件进行部分提交。</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

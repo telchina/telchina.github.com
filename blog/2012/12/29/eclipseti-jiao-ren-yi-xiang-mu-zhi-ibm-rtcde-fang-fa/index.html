@@ -1,0 +1,218 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eclipse提交任意项目至IBM RTC的方法 - telChina Platform</title>
+	<meta name="author" content="telChina">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- iPhone ICON -->
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/icons/apple-touch-icon-57-precomposed.png"/>
+	<!-- iPad ICON-->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icons/apple-touch-icon-72-precomposed.png"/>
+	<!-- iPhone (Retina) ICON-->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/icons/apple-touch-icon-144-precomposed.png"/>
+	<!-- iPad (Retina) ICON-->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/icons/apple-touch-icon-144-precomposed.png"/>
+
+	
+	<meta name="description" content="在开博第一篇《IBM RTC客户端Java EE开发插件安装指导》中，我们介绍了将RTC客户端安装上Java EE开发插件，并将RTC创建的普通项目修改为Java EE Web工程的方法。但是这还远不能满足我们在实际开发过程中的需求。因为不论是根据公司的相关规划还是但对于软件模块化开发的需求， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="telChina Platform" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://telchina.github.com/blog/2012/12/29/eclipseti-jiao-ren-yi-xiang-mu-zhi-ibm-rtcde-fang-fa/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	
+	
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><!--div class="profilepic">	
+	<img src="/images/logo@2x.png" srcset="/images/logo@2x.png 2x" alt="Profile Picture" style="width: 160px;">
+</div-->
+<h1><a href="/">telChina Platform</a></h1>
+<p class="subtitle">telChina公共平台知识分享交流</p>
+<!--nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav-->
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		<a class="github" href="https://github.com/telchina" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T11:42:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/eclipse/'>eclipse</a>, <a class='category' href='/blog/categories/maven/'>maven</a>, <a class='category' href='/blog/categories/rtc/'>rtc</a>, <a class='category' href='/blog/categories/scm/'>scm</a>
+
+
+</div>
+		
+	</div>
+	<a href="/" class="post-back" title="返回首页">&nbsp;</a>
+	<h1 class="title">Eclipse提交任意项目至IBM RTC的方法</h1>
+	<h4 class="postedby">
+  
+
+<span class="byline author vcard">Posted by <span class="fn">i47</span></span>
+</h4>
+	<div class="entry-content"><p>在开博第一篇<a href="http://telchina.github.com/blog/2012/12/28/ibm-rtcke-hu-duan-java-eekai-fa-cha-jian-an-zhuang-zhi-dao/">《IBM RTC客户端Java EE开发插件安装指导》</a>中，我们介绍了将RTC客户端安装上Java EE开发插件，并将RTC创建的普通项目修改为Java EE Web工程的方法。但是这还远不能满足我们在实际开发过程中的需求。因为不论是根据公司的相关规划还是但对于软件模块化开发的需求，一个组件内都都不止包含一个Eclipse工程。</p>
+
+<p>本文将介绍一种新方法，将任意Eclipse工程提交至RTC。</p>
+
+<!--more-->
+
+
+<h2>澄清</h2>
+
+<p>在之前的培训过程中有的同学认为流中的每个组件在将流创建出本地存储库之后都会对应一个Eclipse工程。这是一个误区。如果仔细查看创建本地存储库的步骤的话，会发现这是两个过程：</p>
+
+<ol>
+<li>为流创建本地存储库。</li>
+<li>将流中的组件迁出并识别为Eclipse工程。</li>
+</ol>
+
+
+<p>其中第二步的时候大家选择了创建后加载存储库工作间，且在后面的向导中选择了将组件根目录加载为项目。于是让大家误认为一个组件只能对应一个Eclipse工程。</p>
+
+<p>实际上在创建存储库工作间后加载的时候我们可以选择查找并载入Eclipse工程。这样如果组件下存在Eclipse工程会被加载，如果组件下没有的话不会有任何Eclipse工程被加载。那么如何提交代码呢？</p>
+
+<h2>将本地已经创建好的项目迁入RTC</h2>
+
+<p>你可以将本地创建的任何类型的Eclipse工程迁入到RTC中。Eclipse工程的类型可以是：Java工程，Java EE Web工程，Flex、Flash工程，Maven工程，Android工程等等都可以。</p>
+
+<blockquote><p><strong>注意！</strong>
+这里需要我们的Eclipse开发工具已经集成了RTC功能。你可以选择<a href="">在RTC客户端上安装所需插件</a>升级为你需要的Eclipse，也可以<a href="">将RTC客户端集成安装到你已有的Eclipse中</a>（例如Flash Builder、MyEclipse用户）</p></blockquote>
+
+<p>将已经创建好的项目提交到RTC上某个流的组件可以按照下面的步骤进行：</p>
+
+<ol>
+<li>首先需要先对流创建本地存储库。这个在前面提到过，这里不多复述。</li>
+<li>选择需要迁入RTC的项目右键单击依次选择：团队(Team)⟶共享项目(Share Project)…。打开项目共享项目向导。</li>
+<li>选择存储库类型为Jazz Source Control之后，在向导的第二步中选择之前迁到本地的存储库中的组件。</li>
+<li>在向导的最后一步中提供了选择性提交的支持，可以在此设置过滤条件进行部分提交。</li>
+</ol>
+
+</div>
+
+</article>
+
+	<!--div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div-->
+
+
+
+
+<section id="comment">
+	<!--h1 class="title">发表评论</h1-->
+	<div class="ds-thread" data-form-positon="top"></div>
+	<!-- Duoshuo Comment BEGIN -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"telchina"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
+
+    telChina
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

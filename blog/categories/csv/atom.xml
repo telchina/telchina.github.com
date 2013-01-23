@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSV | telChina Platform]]></title>
+  <link href="http://telchina.github.com/blog/categories/csv/atom.xml" rel="self"/>
+  <link href="http://telchina.github.com/"/>
+  <updated>2013-01-23T16:27:40+08:00</updated>
+  <id>http://telchina.github.com/</id>
+  <author>
+    <name><![CDATA[telChina]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用CSV数据导入RTC项目计划工作项]]></title>
+    <link href="http://telchina.github.com/blog/2013/01/14/shi-yong-csvshu-ju-dao-ru-rtcxiang-mu-ji-hua-gong-zuo-xiang/"/>
+    <updated>2013-01-14T09:46:00+08:00</updated>
+    <id>http://telchina.github.com/blog/2013/01/14/shi-yong-csvshu-ju-dao-ru-rtcxiang-mu-ji-hua-gong-zuo-xiang</id>
+    <content type="html"><![CDATA[<p>在之前的项目试点过程中发现，RTC导入项目计划工作项时对与MS Project XML文档的支持不是很好，导入经常出现内容丢失的问题。为了解决这个问题，特邀请研发管理部的甄强给大家提供了这篇以CSV格式数据导入项目计划工作项的教程。</p>
+
+<!-- more -->
+
+
+<h3>1 从Project中导出CSV文件（直接另存为CSV文件即可）</h3>
+
+<p>导出列：任务名称、资源名称、工时、开始时间、完成时间</p>
+
+<blockquote><h4>注意：</h4>
+
+<ol>
+<li>资源名称里面不能包含资源比例    张三[50%] ×       张三 √</li>
+<li>个任务不能包含多个资源，只能有一个资源，如果同一任务由多人完成，需要对该任务进行细化，细化为一个任务只能有一个资源完成。</li>
+<li>进行导入时Project中的大标题或中标题任务会作为一个工作项处理，建议去掉大标题和中标题任务，只保留子任务，或者保留大标题和中标题任务，导入后进行手动升降级。</li>
+</ol>
+</blockquote>
+
+<h3>2 按照相应格式填充CSV文件</h3>
+
+<p>把第一步中导出的Project CSV文件填充到附件的[RTC中CSV模板.csv]相应格式文件。以开发工作项为例进行说明：</p>
+
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>RTC导入的CSV </th>
+<th> Project导出的CSV </th>
+<th> 初始导入值 </th>
+<th> 注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型 </td>
+<td> 工作项类别 </td>
+<td> 开发工作项 </td>
+<td> 不同的工作项类别相关的内容也不同</td>
+<td></td>
+</tr>
+<tr>
+<td>状态 </td>
+<td> 工作项状态 </td>
+<td> － </td>
+<td> 新建 </td>
+<td> 依据工作项类别以及工作流程不同所表示的状态也不同，但是初始状态均为”新建”</td>
+</tr>
+<tr>
+<td>摘要 </td>
+<td> 工作项摘要 </td>
+<td> 任务名称 </td>
+<td> － </td>
+<td> 对应的摘要内容</td>
+</tr>
+<tr>
+<td>所有者 </td>
+<td> 工作项所有者 </td>
+<td> 资源名称 </td>
+<td> － </td>
+<td> 对应的所有者，该用户应在RTC中，如果没有请RTC管理员添加。</td>
+</tr>
+<tr>
+<td>到期时间 </td>
+<td> 预定结束时间 </td>
+<td> 完成时间 </td>
+<td> － </td>
+<td> 对应的预定到期时间</td>
+</tr>
+<tr>
+<td>估算值 </td>
+<td> 估算值 </td>
+<td> 估算值 </td>
+<td> － </td>
+<td> 对应的估算值。由于秒表在RTC中出错，所以最好以0.5小时为单位</td>
+</tr>
+<tr>
+<td>归类依据 </td>
+<td> 工作项团队类别 </td>
+<td> － </td>
+<td> － </td>
+<td> 对应的团队类别</td>
+</tr>
+<tr>
+<td>开发工作项类别 </td>
+<td> 开发工作项类别 </td>
+<td> － </td>
+<td> 实现 或 设计 </td>
+<td> 对应的开发工作项类别</td>
+</tr>
+<tr>
+<td>开发工作子类 </td>
+<td> 开发工作子类 </td>
+<td> － </td>
+<td> 开发工作项类别是[设计]时：设计-概要 设计-详细 开发工作项类别是[实现]时： 实现-编码 实现-集成 实现-用户文档 实现-程序 </td>
+<td> 对应的开发工作子类</td>
+</tr>
+<tr>
+<td>开始时间 </td>
+<td> 预定开始时间 </td>
+<td> 开始时间 </td>
+<td> － </td>
+<td> 对应的预定开始时间</td>
+</tr>
+<tr>
+<td>团队区域 </td>
+<td> 团队区域 </td>
+<td> － </td>
+<td> － </td>
+<td> 对应的团队区域</td>
+</tr>
+<tr>
+<td>约束类型 </td>
+<td> 约束类型 </td>
+<td> 限制类型 </td>
+<td> － </td>
+<td> 对应的约束类型：开始不早于 完成不晚于 如没有约束限制该列可删除</td>
+</tr>
+<tr>
+<td>约束日期 </td>
+<td> 约束日期 </td>
+<td> 限制日期 </td>
+<td> － </td>
+<td> 对应的约束日期，如没有约束限制该列可删除</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>填充后的CSV文件参照附件的[RTC中CSV模板.csv]文件</p>
+
+<h3>3 从本地的CSV文件导入到RTC中</h3>
+
+<p>参照下图：</p>
+
+<p><img src="ilus/csv2rtc/csv2rtc_1.png" alt="csv2rtc-1" />
+<img src="ilus/csv2rtc/csv2rtc_2.png" alt="csv2rtc-2" />
+<img src="ilus/csv2rtc/csv2rtc_3.png" alt="csv2rtc-3" />
+<img src="ilus/csv2rtc/csv2rtc_4.png" alt="csv2rtc-4" /></p>
+
+<p>这样就把相应的工作项成功的导入到了RTC中，可以查看相应的工作项进行验证。</p>
+
+<h3>4 修改计划目标值</h3>
+
+<p><img src="ilus/csv2rtc/csv2rtc_5.png" alt="csv2rtc-5" /></p>
+
+<p>由于计划目标值是根据时间线中的迭代进行筛选得出，进行CSV进行导入时无法判断，需要通过WEB页面进行修改计划目标。参照下图：</p>
+
+<ol>
+<li><p>登录到RTC WEB端
+地址为：https://192.168.253.234:9443/ccm 或者https://telchinartc.com.cn:9443/ccm</p></li>
+<li><p>选择相应的项目区域</p></li>
+</ol>
+
+
+<p><img src="ilus/csv2rtc/csv2rtc_6.png" alt="csv2rtc-6" /></p>
+
+<ol>
+<li>输入检索词进行工作项检索，检索需要更新计划目标的工作项</li>
+</ol>
+
+
+<p><img src="ilus/csv2rtc/csv2rtc_7.png" alt="csv2rtc-7" /></p>
+
+<ol>
+<li>选择要编辑的工作项，并添加属性变更</li>
+</ol>
+
+
+<p><img src="ilus/csv2rtc/csv2rtc_8.png" alt="csv2rtc-8" />
+<img src="ilus/csv2rtc/csv2rtc_9.png" alt="csv2rtc-9" /></p>
+
+<ol>
+<li>选择计划目标并改变相关的属性值（需要修改的迭代计划），并执行操作以及刷新</li>
+</ol>
+
+
+<p><img src="ilus/csv2rtc/csv2rtc_10.png" alt="csv2rtc-10" />
+<img src="ilus/csv2rtc/csv2rtc_11.png" alt="csv2rtc-11" />
+<img src="ilus/csv2rtc/csv2rtc_12.png" alt="csv2rtc-12" /></p>
+
+<p>更新完毕，相关工作项的【计划目标】属性修改为当前迭代。进行查询该迭代计划，相关工作项已经全部出现在计划中。通过以上操作把相应的Project计划任务内容全部导入到了RTC中。</p>
+]]></content>
+  </entry>
+  
+</feed>
