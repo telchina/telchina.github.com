@@ -207,7 +207,7 @@ task :update_source, :theme do |t, args|
 end
 
 ##############
-# Deploying  #
+# `ing  #
 ##############
 
 desc "Default deploy task"
@@ -251,6 +251,7 @@ multitask :push do
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
   puts "\n## copying #{public_dir} to #{deploy_dir}"
   cp_r "#{public_dir}/.", deploy_dir
+  cp_r "#{source_dir}/_posts/ilus/.", "#{deploy_dir}/ilus"
   cd "#{deploy_dir}" do
     system "git add ."
     system "git add -u"

@@ -56,6 +56,7 @@ module Jekyll
         if @raw
           contents
         else
+          content.gsub(/<img([^>]*)src=\"([^\"]+)\"/, "<img#$1src=\"\/#$2\"")
           partial = Liquid::Template.parse(contents)
           context.stack do
             partial.render(context)
