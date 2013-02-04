@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS | telChina Platform]]></title>
   <link href="http://telchina.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://telchina.github.com/"/>
-  <updated>2013-02-05T01:11:47+08:00</updated>
+  <updated>2013-02-05T01:42:43+08:00</updated>
   <id>http://telchina.github.com/</id>
   <author>
     <name><![CDATA[telChina]]></name>
@@ -20,19 +20,49 @@
     <id>http://telchina.github.com/blog/2013/02/05/ios-6-dot-1yue-yu-gong-ju-xian-yi-fa-bu</id>
     <content type="html"><![CDATA[<h1>iOS 6.1越狱工具现已发布</h1>
 
-<p>如需越狱工具可以使用下面的链接进行下载：</p>
+<p>如需越狱工具，可以使用下面的链接，下载该软件运行在Windows操作系统上的版本：</p>
 
 <p><a href="http://i47.telchina.cn/evasi0n-win-1.0-release.zip">济南联通下载</a></p>
 
-<blockquote><p>提醒：
+<blockquote><p>敬告：
 目前版本为次工具的第一个公开发布版本，根据以往经验，不排除出现瑕疵的情况。请妥善备份好您的数据后再使用。</p></blockquote>
 
-<h3>越狱工具使用教程：</h3>
+<h4>支持设备包括：</h4>
 
 <!-- more -->
 
 
-<p>即将发布……</p>
+<p>所有能够运行iOS 6.0/6.0.1/6.0.2/6.1系统的</p>
+
+<ul>
+<li>iPad 2/3/4</li>
+<li>iPad mini</li>
+<li>iPhone 4/4S/5</li>
+<li>iPod touch 4/5</li>
+</ul>
+
+
+<h3>越狱工具使用教程：</h3>
+
+<ol>
+<li>准备工作：下载并解压缩获得越狱工具；去掉设备的锁屏密码方便操作。
+
+<blockquote><p>提示：
+越狱过程中可能备份转储用户数据，如果已经安装了较多的应用或者保存了大量的数据都会使越狱过程变得缓慢甚至失败。建议另行备份自己的数据并在“设置-通用-还原”中抹掉所有内容和设置后再进行越狱。越狱完成后还原数据备份即可。</p></blockquote></li>
+<li>用数据线链接手机和电脑。打开电脑上的越狱工具。Windows 7用户建议右键单击越狱工具，选择以管理员方式运行。</li>
+<li>待越狱工具成功识别设备后点击“Jailbreak”按钮，等待进度条执行。
+
+<blockquote><p>提示：
+中间有一段越狱程序会一直闪,这个时候要解锁手机,此时点击手机上的名为Jailbreak的新图标。</p></blockquote></li>
+<li>继续等待，纸质进度条完成。并显示：“Jailbreak complete！The device may restart a few times as it completes the process.”。此时单击“Exit”按钮退出越狱工具。越狱完成，断开电脑和设备的链接即可。</li>
+</ol>
+
+
+<p>更多内容即将上线……</p>
+
+<h3>如何修改越狱后系统远程访问密码？</h3>
+
+<h3>如何运行未经签名的应用？</h3>
 ]]></content>
   </entry>
   
