@@ -4,7 +4,7 @@
   <title><![CDATA[telChina Platform]]></title>
   <link href="http://telchina.github.com/atom.xml" rel="self"/>
   <link href="http://telchina.github.com/"/>
-  <updated>2013-02-05T00:51:06+08:00</updated>
+  <updated>2013-02-05T00:52:14+08:00</updated>
   <id>http://telchina.github.com/</id>
   <author>
     <name><![CDATA[telChina]]></name>
@@ -172,16 +172,16 @@
 
 <p>参照下图：</p>
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_1.png" alt="csv2rtc-1" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_2.png" alt="csv2rtc-2" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_3.png" alt="csv2rtc-3" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_4.png" alt="csv2rtc-4" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_1.png" alt="csv2rtc-1" />
+<img src="ilus/csv2rtc/csv2rtc_2.png" alt="csv2rtc-2" />
+<img src="ilus/csv2rtc/csv2rtc_3.png" alt="csv2rtc-3" />
+<img src="ilus/csv2rtc/csv2rtc_4.png" alt="csv2rtc-4" /></p>
 
 <p>这样就把相应的工作项成功的导入到了RTC中，可以查看相应的工作项进行验证。</p>
 
 <h3>4 修改计划目标值</h3>
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_5.png" alt="csv2rtc-5" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_5.png" alt="csv2rtc-5" /></p>
 
 <p>由于计划目标值是根据时间线中的迭代进行筛选得出，进行CSV进行导入时无法判断，需要通过WEB页面进行修改计划目标。参照下图：</p>
 
@@ -192,31 +192,31 @@
 </ol>
 
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_6.png" alt="csv2rtc-6" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_6.png" alt="csv2rtc-6" /></p>
 
 <ol>
 <li>输入检索词进行工作项检索，检索需要更新计划目标的工作项</li>
 </ol>
 
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_7.png" alt="csv2rtc-7" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_7.png" alt="csv2rtc-7" /></p>
 
 <ol>
 <li>选择要编辑的工作项，并添加属性变更</li>
 </ol>
 
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_8.png" alt="csv2rtc-8" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_9.png" alt="csv2rtc-9" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_8.png" alt="csv2rtc-8" />
+<img src="ilus/csv2rtc/csv2rtc_9.png" alt="csv2rtc-9" /></p>
 
 <ol>
 <li>选择计划目标并改变相关的属性值（需要修改的迭代计划），并执行操作以及刷新</li>
 </ol>
 
 
-<p><img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_10.png" alt="csv2rtc-10" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_11.png" alt="csv2rtc-11" />
-<img src="/http://telchina.github.com/ilus/csv2rtc/csv2rtc_12.png" alt="csv2rtc-12" /></p>
+<p><img src="ilus/csv2rtc/csv2rtc_10.png" alt="csv2rtc-10" />
+<img src="ilus/csv2rtc/csv2rtc_11.png" alt="csv2rtc-11" />
+<img src="ilus/csv2rtc/csv2rtc_12.png" alt="csv2rtc-12" /></p>
 
 <p>更新完毕，相关工作项的【计划目标】属性修改为当前迭代。进行查询该迭代计划，相关工作项已经全部出现在计划中。通过以上操作把相应的Project计划任务内容全部导入到了RTC中。</p>
 ]]></content>
@@ -331,7 +331,7 @@
 
 <h3>导入Eclipse软件安装与更新站点</h3>
 
-<p><img src="/http://telchina.github.com/ilus/AddSoftwareSite.png" style="float:right" width="50%"/></p>
+<p><img src="ilus/AddSoftwareSite.png" style="float:right" width="50%"/></p>
 
 <p>RTC客户端默认情况下没有添加来自Eclipse.org的可用软件站点列表。通过下面的步骤可以完成添加。</p>
 
@@ -346,7 +346,7 @@
 
 <h3>安装Java EE Development插件</h3>
 
-<p><img src="/http://telchina.github.com/ilus/SelectPlugins.png" style="float:left" width="50%"/></p>
+<p><img src="ilus/SelectPlugins.png" style="float:left" width="50%"/></p>
 
 <p>Java EE开发的主要插件在Eclipse Helios站点下，在安装新软件(Install New Software)窗口中选择使用下面的站点。</p>
 
@@ -366,7 +366,7 @@
 
 <p>完成Java EE Development插件安装并建立本地存储库后将Eclipse切换至Java EE透视图。在此透视图中的“项目管理器”视图中可以看到我们创建了本地存储库的Eclipse项目。此时的Eclipse项目尚未不具备任何类型信息，不能用于开发。我们需要为其添加Project Facets来满足Java EE开发需要。</p>
 
-<p><img src="/http://telchina.github.com/ilus/ProjectProperties.png" style="float:right; width:50%;"/></p>
+<p><img src="ilus/ProjectProperties.png" style="float:right; width:50%;"/></p>
 
 <ul>
 <li>在“项目管理器”视图中右键单击选择属性(Properties)，打开项目属性信息窗口。</li>
@@ -376,7 +376,7 @@
 
 <blockquote><p>第一访问Project Facets时会提醒：“当前项目尚未配置项目Facets，转换成配置Facets的项目后可以轻松控制项目可用的技术。”，此时单击“转换项目Facets”的链接即可打开Facets配置界面。</p></blockquote>
 
-<p><img src="/http://telchina.github.com/ilus/SelectFacets.png" style="float:left; width:50%;"/></p>
+<p><img src="ilus/SelectFacets.png" style="float:left; width:50%;"/></p>
 
 <ul>
 <li>将项目配置为Java EE项目前首先要将项目转换为Java项目。勾选Java并将版本选择为1.6后保存。之后再次勾选Dynamic Web Module版本3.0和JavaScript版本1.0，保存成功后项目项目类型即可转换为Java EE Web项目。</li>
